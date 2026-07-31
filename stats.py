@@ -4,15 +4,13 @@ def get_book_text(path):
         return file_contents
 
 def word_count(book):
-    words = get_book_text("books/frankenstein.txt")
-    split = words.split()
-    return len(split)
+    words = book.split()
+    return len(words)
 
 def char_count(text):
-    full_text = get_book_text(text)
     chars = {}
 
-    for char in full_text.lower():
+    for char in text.lower():
         if char in chars:
             chars[char] += 1
         else:
