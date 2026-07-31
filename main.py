@@ -10,6 +10,10 @@ def main():
     print_report(sys.argv[1], num_words, characters_counted)
 
 def print_report(book_path, num_words, sorted_list):
+        total_minutes = num_words // 200
+        hours = total_minutes // 60
+        minutes = total_minutes % 60
+
         print("============ BOOKBOT ============")
         print(f"Analyzing book found at {book_path}...")
         print("----------- Word Count ----------")
@@ -18,6 +22,7 @@ def print_report(book_path, num_words, sorted_list):
         for pair in sorted_list:
             if pair[0].isalpha():
                 print(f"{pair[0]}: {pair[1]}")
+        print(f"Estimated reading time: {hours} hours and {minutes} minutes")
         print("============= END ===============")
 
 def check_for_two():
